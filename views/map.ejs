@@ -20,7 +20,7 @@
         <div class="container-fluid">
           <br />
           <hr />
-          <h3>
+          <h3 style="text-align: center;">
             <i class="fa fa-bus" style="color:yellow"></i> MTC BUS TRACKER
           </h3>
           <hr />
@@ -63,6 +63,7 @@
               >
             </select>
             <br>
+            <!-- <div id="routeDisplay"></div> -->
             <div id="routeDisplay">
               <div>
                 <span id="route"></span>
@@ -81,9 +82,6 @@
       </div>
       <div id="map" class="col-sm-9"></div>
     </div>
-    &nbsp;
-    <div id="warnings-panel"></div>
-    
 </div>
 <!-- navbar -->
 <div id="myNav" class="overlay" style="color: #fff; font-size: 18px;line-height: 50px;margin-top: -50;">
@@ -96,15 +94,15 @@
             </h3>
             <hr />
             <div>
-              <label>ROUTE : </label>
+              <label>Route : </label>
               <span class="route"></span>
             </div>
             <div>
-              <label>DISTANCE : </label>
+              <label>Distance : </label>
               <span class="distance"></span>
             </div>
             <div>
-              <label>TIME : </label>
+              <label>Time : </label>
               <span class="time"></span>
             </div>
             <div>
@@ -117,13 +115,25 @@
             </div>
           </div>
     </div>
+  </div>  
+  <div id="section2" style="overflow: auto;">
+    <h2 id="showroute"></h2>
+    <div id="routeDisp" >
+
+    </div>
   </div>
+  <footer>
+    <div style="padding: 30px;text-align: center;">
+       <h4 style="color: #fff">Developed by love by <a href="">CORA PRODUCTIONS</a> </h4>
+    </div>
+  </footer>
     <script
       async
       defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD37UizytAiQ7AefQr-4WqfcWFa6FZajw0"
     ></script>
     <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+    <!-- <script  src="../public/JS/app.js"/> -->
     <script src="./JS/app.js"></script>
   </body>
 </html>

@@ -54,7 +54,6 @@ function initMap() {
 
   var infoTbmToMed = new google.maps.InfoWindow({
     content: ` <p>51C\n TAMBARAM TO MEDAVAKKAM</p>
-
     <span style="font-size:15px;cursor:pointer" onclick="openNav()">&#9776; View</span>
     `
   });
@@ -122,6 +121,12 @@ function calculateAndDisplayRoute(
       travelMode: "WALKING"
     },
     function(response, status) {
+      // console.log('i am in');
+      var list = document.getElementById("routeDisp");
+      console.log(list);
+      while (list.hasChildNodes()) {
+        list.removeChild(list.firstChild);
+      }
       if (status === "OK") {
         directionsDisplay.setDirections(response);
         showSteps(response, markerArray, stepDisplay, map);
@@ -132,8 +137,22 @@ function calculateAndDisplayRoute(
   );
 }
 
+function parser(chunk) {
+  let doc = new DOMParser().parseFromString(
+    `<div id="main" style="border: 2px solid #eee;box-shadow: #fff 3px 5px;margin:5px; padding:40px;border-left-color: #006EB6;border-left-width: 10;">${chunk}</div>`,
+    "text/html"
+  );
+  return doc;
+}
+
 function showSteps(directionResult, markerArray, stepDisplay, map) {
   var myRoute = directionResult.routes[0].legs[0]; // data .......
+  myRoute.steps.forEach(path => {
+    var parsedData = parser(path.instructions);
+    document
+      .getElementById("routeDisp")
+      .appendChild(parsedData.body.firstChild);
+  });
 
   const { start_address, end_address } = myRoute;
   const path_route = `${start_address.split(",")[0]} TO ${
@@ -142,6 +161,7 @@ function showSteps(directionResult, markerArray, stepDisplay, map) {
   console.log(path_route);
   document.getElementById("route").innerHTML = path_route;
   document.querySelector(".route").innerHTML = path_route;
+  document.getElementById('showroute').innerHTML = path_route;
   dataPath = myRoute;
   // path_info = myRoute.steps[0].instructions;
   for (var i = 0; i < myRoute.steps.length; i++) {
@@ -186,7 +206,6 @@ function updateLocation(marker, position) {
     itr++;
   }
 }
-
 
 function openNav() {
   document.getElementById("myNav").style.width = "100%";
