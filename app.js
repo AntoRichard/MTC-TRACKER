@@ -20,4 +20,4 @@ app.use(IndexRoute);
 app.use(ChartRoute);
 app.use(MapRoute);
 
-app.listen(PORT, () => console.log(`Server is running in PORT : ${PORT}`));
+app.listen(PORT || process.env.PORT, () => console.log(`Server is running in PORT : ${PORT}`));
