@@ -1,0 +1,68 @@
+[
+  {
+    "type": "Deluxe",
+    "busNo": "5A",
+    "from": "TAMBARAM",
+    "to": "T.NAGAR",
+    "travelTime": "1 hrs 14 min",
+    "day": 1542,
+    "week_days": 3124,
+    "week_end": 2389,
+    "time": "37 min"
+  },
+  {
+    "type": "Deluxe",
+    "busNo": "D51ET",
+    "from": "Medavakkam",
+    "to": "Velachery",
+    "travelTime": "1 hrs 14 min",
+    "day": 983,
+    "week_days": 3124,
+    "week_end": 2389,
+    "time": "27 min"
+  },
+  {
+    "type": "Deluxe",
+    "busNo": "570X",
+    "from": "Guduvanchery, Tamil Nadu",
+    "to": "Velachery",
+    "travelTime": "1 hrs 14 min",
+    "day": 768,
+    "week_days": 3124,
+    "week_end": 2389,
+    "time": "1hr 12 min"
+  },
+  {
+    "type": "Deluxe",
+    "busNo": "21G",
+    "from": "Guindy",
+    "to": "Pallavaram",
+    "travelTime": "36 min",
+    "day": 988,
+    "week_days": 3124,
+    "week_end": 2389,
+    "time": "1hr 12 min"
+  },
+  {
+    "type": "Deluxe",
+    "busNo": "597A",
+    "from": "Tambaram",
+    "to": "Avadi, Tamil Nadu",
+    "travelTime": "36 min",
+    "day": 675,
+    "week_days": 3124,
+    "week_end": 2389,
+    "time": "47 min"
+  },
+  {
+    "type": "Deluxe",
+    "busNo": "597A",
+    "from": "Tambaram",
+    "to": "Avadi, Tamil Nadu",
+    "travelTime": "36 min",
+    "day": 246,
+    "week_days": 3124,
+    "week_end": 2389,
+    "time": "47 min"
+  }
+]
