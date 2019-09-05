@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-// const morgan = require('morgan');
+const morgan = require('morgan');
 const path = require('path');
 
 const IndexRoute = require('./Routes/index');
@@ -13,7 +13,7 @@ const app = express();
 // Middleware
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(morgan('dev'));
+app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(IndexRoute);

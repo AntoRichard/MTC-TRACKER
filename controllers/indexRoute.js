@@ -1,4 +1,3 @@
-exports.IndexGet = (req,res)=>{
-    res.sendFile('index.html');
-}
-
+exports.IndexGet = (req, res) => {
+  res.sendFile('index.html');
+};
