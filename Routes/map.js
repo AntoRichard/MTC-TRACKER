@@ -21,7 +21,7 @@ Route.get('/map', async (req, res) => {
   console.log(totalSeats);
   res.render('map', {
     seats: totalSeats,
-    price: keys[keys.length - 1].price
+    price: keys[keys.length - 1].cost
   });
   // console.log(keys[(keys.length)-1].price);
 });
