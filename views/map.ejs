@@ -5,16 +5,52 @@
     <meta charset="utf-8" />
     <title>MTC BUS ROUTE</title>
     <link rel="stylesheet" href="./CSS/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    flag=1;
+    $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+    
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+    
+          // Store hash
+          var hash = this.hash;
+    
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 400, function(){
+    
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+        
+        if(flag){
+        document.getElementById('backbtn').innerHTML = "< Back";
+        flag=0;
+        }else{
+          document.getElementById('backbtn').innerHTML = "";
+          flag=1;
+        }
+      });
+    });
+    </script>
   </head>
   <body>
+      <nav class="navbar navbar-expand-sm fixed-top" style="background-color: #006EB6;">
+          <a class="navbar-brand" href="#sidebar" id="backbtn" style="color: white;"></a>
+        </nav>
     <div class="row">
       <div class="col-sm-3" id="sidebar">
         <div class="container-fluid">
@@ -63,6 +99,8 @@
               >
             </select>
             <br>
+            <center><button class="btn btn-success" id="search"><a href="#map" id="search" style="text-decoration: none !important; color: white;">Search</a></button></center>
+            <br>
             <!-- <div id="routeDisplay"></div> -->
             <div id="routeDisplay">
               <div>
@@ -84,8 +122,8 @@
     </div>
 </div>
 <!-- navbar -->
-<div id="myNav" class="overlay" style="color: #fff; font-size: 18px;line-height: 50px;margin-top: -50;">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<div id="myNav" class="overlay" style="background-color:#006eb6;color:  #fff; font-size: 18px;line-height: 50px;margin-top: -50;">
+    <button href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</button>
     <div class="overlay-content" >
         <div id="routeDisplay">
             <hr />
@@ -116,17 +154,12 @@
           </div>
     </div>
   </div>  
-  <h2 id="showroute" ></h2>
+  <h2 id="showroute" style="padding: 25px;"></h2>
   <div id="section2" style="overflow: auto;">
     <div id="routeDisp" >
 
     </div>
   </div>
-  <footer>
-    <div style="padding: 30px;text-align: center;">
-       <h4 style="color: #fff">Developed with love by <a href="">CORA PRODUCTIONS</a> </h4>
-    </div>
-  </footer>
     <script
       async
       defer

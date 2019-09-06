@@ -220,12 +220,4 @@ const callUpdateHandler = () => {
   updateLocation(MedToVel1, position3);
 };
 
-function openSide() {
-  document.getElementById('sidebar').style.width = '25%';
-}
-
-function closeSide() {
-  document.getElementById('sidebar').style.width = '0%';
-}
-
 setInterval(callUpdateHandler, 1000);
